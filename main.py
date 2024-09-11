@@ -20,7 +20,7 @@ def get_video_codec(input_file):
 def convert_video(input_file, output_file):
     try:
         subprocess.run(
-            ['ffmpeg', '-i', input_file, '-vcodec', 'libx264', '-preset', 'medium', output_file],
+            ['ffmpeg', '-i', input_file, '-vcodec', 'libx264', '-preset', 'veryslow', '-crf', '18', output_file],
             check=True
         )
         print(f"Преобразование {input_file} завершено успешно.")
